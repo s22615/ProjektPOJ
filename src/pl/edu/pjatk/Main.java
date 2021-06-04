@@ -17,22 +17,22 @@ public class Main {
         JCheckBox btnrazowe = new JCheckBox("razowe");
         JCheckBox btntradycyjne = new JCheckBox("tradycyjne");
         JLabel nameSec3 = new JLabel("Dodatkowy sos");
-        JCheckBox btnbraks = new JCheckBox("brak");
+        JCheckBox btnpomidorowy = new JCheckBox("pomidorowy");
         JCheckBox btnsweetchilli = new JCheckBox("sweet-chilli");
         JCheckBox btnczosnkowy = new JCheckBox("czosnkowy");
         JCheckBox btnBBQ = new JCheckBox("BBQ");
         JLabel nameSec4 = new JLabel("Dodatkowe przyprawy");
-        JCheckBox btnbrakp = new JCheckBox("brak");
+        JCheckBox btntymianek = new JCheckBox("tymianek");
         JCheckBox btnoregano = new JCheckBox("oregano");
         JCheckBox btnbaz = new JCheckBox("bazylia");
         JCheckBox btnzprowan = new JCheckBox("zioła prowansalskie");
         JLabel nameSec5 = new JLabel("Oliwa");
-        JCheckBox btnbrako = new JCheckBox("brak");
+        JCheckBox btnrozmaryn = new JCheckBox("rozmaryn");
         JCheckBox btnczosnkowao = new JCheckBox("czosnkowa");
         JCheckBox btnchillio = new JCheckBox("chilli");
         JCheckBox btnziolowao = new JCheckBox("ziolowa");
         JLabel nameSec6 = new JLabel("Dodatkowe składniki");
-        JCheckBox btnbraksk = new JCheckBox("brak");
+        JCheckBox btnzoltyser = new JCheckBox("zolty ser");
         JCheckBox btnboczek = new JCheckBox("boczek");
         JCheckBox btnszynka = new JCheckBox("szynka");
         JCheckBox btnmozzarella = new JCheckBox("mozarella");
@@ -49,7 +49,34 @@ public class Main {
         JCheckBox btnddd = new JCheckBox("dostawa do domu");
         JButton jButton = new JButton("Zloz zamowienie");
 
+        ButtonGroup Sec1G = new ButtonGroup();
+        ButtonGroup Sec2G = new ButtonGroup();
+        ButtonGroup Sec3G = new ButtonGroup();
+        ButtonGroup Sec4G = new ButtonGroup();
+        ButtonGroup Sec5G = new ButtonGroup();
+        ButtonGroup Sec7G = new ButtonGroup();
 
+        Sec1G.add(btnsmall);
+        Sec1G.add(btnmedium);
+        Sec1G.add(btnlarge);
+        Sec2G.add(btncienkie);
+        Sec2G.add(btngrube);
+        Sec2G.add(btnrazowe);
+        Sec2G.add(btntradycyjne);
+        Sec3G.add(btnpomidorowy);
+        Sec3G.add(btnsweetchilli);
+        Sec3G.add(btnczosnkowy);
+        Sec3G.add(btnBBQ);
+        Sec4G.add(btntymianek);
+        Sec4G.add(btnoregano);
+        Sec4G.add(btnbaz);
+        Sec4G.add(btnzprowan);
+        Sec5G.add(btnrozmaryn);
+        Sec5G.add(btnczosnkowao);
+        Sec5G.add(btnchillio);
+        Sec5G.add(btnziolowao);
+        Sec7G.add(btnonm);
+        Sec7G.add(btnddd);
 
         nameApl.setBounds(160,30,280,30);
         //sec1
@@ -65,25 +92,25 @@ public class Main {
         btntradycyjne.setBounds(50,180,110,30);
         //sec3
         nameSec3.setBounds(30,210,150,40);
-        btnbraks.setBounds(50,240,110,30);
+        btnpomidorowy.setBounds(50,240,110,30);
         btnsweetchilli.setBounds(175,240,110,30);
         btnczosnkowy.setBounds(300,240,110,30);
         btnBBQ.setBounds(50,270,110,30);
         //sec4
         nameSec4.setBounds(30,300,150,40);
-        btnbrakp.setBounds(50,330,110,30);
+        btntymianek.setBounds(50,330,110,30);
         btnoregano.setBounds(175,330,110,30);
         btnbaz.setBounds(300,330,110,30);
-        btnzprowan.setBounds(50,360,110,30);
+        btnzprowan.setBounds(50,360,150,30);
         //sec5
         nameSec5.setBounds(30,390,150,40);
-        btnbrako.setBounds(50,420,110,30);
+        btnrozmaryn.setBounds(50,420,110,30);
         btnczosnkowao.setBounds(175,420,110,30);
         btnchillio.setBounds(300,420,110,30);
         btnziolowao.setBounds(50,450,110,30);
         //sec6
         nameSec6.setBounds(30,480,150,40);
-        btnbraksk.setBounds(50,510,110,30);
+        btnzoltyser.setBounds(50,510,110,30);
         btnboczek.setBounds(175,510,110,30);
         btnszynka.setBounds(300,510,110,30);
         btnmozzarella.setBounds(50,540,110,30);
@@ -115,25 +142,25 @@ public class Main {
         window.add(btntradycyjne);
 
         window.add(nameSec3);
-        window.add(btnbraks);
+        window.add(btnpomidorowy);
         window.add(btnsweetchilli);
         window.add(btnczosnkowy);
         window.add(btnBBQ);
 
         window.add(nameSec4);
-        window.add(btnbrakp);
+        window.add(btntymianek);
         window.add(btnoregano);
         window.add(btnbaz);
         window.add(btnzprowan);
 
         window.add(nameSec5);
-        window.add(btnbrako);
+        window.add(btnrozmaryn);
         window.add(btnczosnkowao);
         window.add(btnchillio);
         window.add(btnziolowao);
 
         window.add(nameSec6);
-        window.add(btnbraksk);
+        window.add(btnzoltyser);
         window.add(btnboczek);
         window.add(btnszynka);
         window.add(btnmozzarella);
