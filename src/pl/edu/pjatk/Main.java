@@ -63,6 +63,7 @@ public class Main {
         btnczosnkowao.setBounds(120,330,70,30);
         btnchillio.setBounds(190,330,70,30);
         btnziolowao.setBounds(260,330,70,30);
+        //sec5
 
         window.add(nameApl);
         window.add(nameSec1);
