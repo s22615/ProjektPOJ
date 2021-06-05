@@ -16,8 +16,6 @@ public class Main {
         JFrame window = new JFrame("ProjektPOJ - system do zamawiania pizzy");
         window.setLayout(null);
 
-        String SelectedItem = "";
-
         JLabel nameApl = new JLabel("Zamawanie pizzy!");
         JLabel nameSec1 = new JLabel("Rozmiar");
         JCheckBox btnsmall = new JCheckBox("mala");
@@ -234,7 +232,8 @@ public class Main {
         ActionListener test1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(skladniki);
+                Output output = new Output(s1,s2,s3,s4,s5,skladniki,s7);
+                window.dispose();
             }
         };
         ActionListener actionListener6 = new ActionListener() {
