@@ -8,6 +8,7 @@ public class Output {
     JFrame jFrame = new JFrame();
     JLabel jLabel = new JLabel();
     JLabel jLabel2 = new JLabel();
+    JLabel jLabel3 = new JLabel();
     JButton jButton = new JButton();
     String[] s1 = new String[1];
     String[] s2 = new String[1];
@@ -31,22 +32,28 @@ public class Output {
         String rozmiar3 = s3[0];
         String rozmiar4 = s4[0];
         String rozmiar5 = s5[0];
-//        for (String s : skladniki) {
-//            jLabel2.add(s);
-//        }
-        String rozmiar6 = s7[0];
+        String rozmiar6 = "";
+        for (String s : skladniki) {
+            rozmiar6 = rozmiar6 + ", " + s;
+        }
+        System.out.println(rozmiar6);
+        String rozmiar7 = s7[0];
+
         jLabel.setText(String.format("rozmiar: %s \n, ciasto: %s \n,dodatkowy sos: %s \n",rozmiar,rozmiar2,rozmiar3));
-        jLabel2.setText(String.format("Dodatkowe przyprawy: %s \n, oliwa: %s \n, dostawa: %s \n",rozmiar4,rozmiar5,rozmiar6));
+        jLabel2.setText(String.format("Dodatkowe przyprawy: %s \n, oliwa: %s \n, dostawa: %s \n",rozmiar4,rozmiar5,rozmiar7));
+        jLabel3.setText(String.format("Skladniki: %s", rozmiar6));
 
         jFrame.add(jLabel);
         jFrame.add(jLabel2);
+        jFrame.add(jLabel3);
         jFrame.add(jButton);
 
-        jLabel.setBounds(30,50, 420, 50);
-        jLabel2.setBounds(30,150, 420, 50);
+        jLabel.setBounds(30,50, 600, 50);
+        jLabel2.setBounds(30,150, 600, 50);
+        jLabel3.setBounds(30,250, 600, 50);
 
 
-        jFrame.setSize(420,420);
+        jFrame.setSize(700,700);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
