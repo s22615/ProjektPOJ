@@ -1,11 +1,23 @@
 package pl.edu.pjatk;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         JFrame window = new JFrame("ProjektPOJ - system do zamawiania pizzy");
         window.setLayout(null);
+
+        String SelectedItem = "";
+
         JLabel nameApl = new JLabel("Zamawanie pizzy!");
         JLabel nameSec1 = new JLabel("Rozmiar");
         JCheckBox btnsmall = new JCheckBox("mala");
@@ -31,34 +43,39 @@ public class Main {
         JCheckBox btnczosnkowao = new JCheckBox("czosnkowa");
         JCheckBox btnchillio = new JCheckBox("chilli");
         JCheckBox btnziolowao = new JCheckBox("ziolowa");
-        JLabel nameSec6 = new JLabel("Dodatkowe składniki");
-        JCheckBox btnzoltyser = new JCheckBox("zolty ser");
-        JCheckBox btnboczek = new JCheckBox("boczek");
-        JCheckBox btnszynka = new JCheckBox("szynka");
-        JCheckBox btnmozzarella = new JCheckBox("mozarella");
-        JCheckBox btnoliwki = new JCheckBox("oliwki");
-        JCheckBox btnpapryka = new JCheckBox("papryka");
-        JCheckBox btnananas = new JCheckBox("ananas");
-        JCheckBox btnpieczarki = new JCheckBox("pieczarki");
-        JCheckBox btnpomidory = new JCheckBox("pomidory");
-        JCheckBox btnfeta = new JCheckBox("feta");
-        JCheckBox btngrillkur = new JCheckBox("kurczak");
-        JCheckBox btnjalapeno = new JCheckBox("jalapeno");
+        JLabel nameSec6 = new JLabel("Dodatkowe składniki (MAX 5 skladnikow)");
+        JButton btnzoltyser = new JButton("zolty ser");
+        JButton btnboczek = new JButton("boczek");
+        JButton btnszynka = new JButton("szynka");
+        JButton btnmozzarella = new JButton("mozarella");
+        JButton btnoliwki = new JButton("oliwki");
+        JButton btnpapryka = new JButton("papryka");
+        JButton btnananas = new JButton("ananas");
+        JButton btnpieczarki = new JButton("pieczarki");
+        JButton btnpomidory = new JButton("pomidory");
+        JButton btnfeta = new JButton("feta");
+        JButton btngrillkur = new JButton("kurczak");
+        JButton btnjalapeno = new JButton("jalapeno");
         JLabel nameSec7 = new JLabel("Sposob dostawy");
         JCheckBox btnonm = new JCheckBox("odbior na miejscu");
         JCheckBox btnddd = new JCheckBox("dostawa do domu");
         JButton jButton = new JButton("Zloz zamowienie");
 
         ButtonGroup Sec1G = new ButtonGroup();
-        ButtonGroup Sec2G = new ButtonGroup();
-        ButtonGroup Sec3G = new ButtonGroup();
-        ButtonGroup Sec4G = new ButtonGroup();
-        ButtonGroup Sec5G = new ButtonGroup();
-        ButtonGroup Sec7G = new ButtonGroup();
+        ButtonGroup Sec2G = new ButtonGroup ();
+        ButtonGroup Sec3G = new ButtonGroup ();
+        ButtonGroup Sec4G = new ButtonGroup ();
+        ButtonGroup Sec5G = new ButtonGroup ();
+        ButtonGroup Sec7G = new ButtonGroup ();
+        JPanel panel1G = new JPanel();
 
         Sec1G.add(btnsmall);
         Sec1G.add(btnmedium);
         Sec1G.add(btnlarge);
+        panel1G.add(btnsmall);
+        panel1G.add(btnmedium);
+        panel1G.add(btnlarge);
+
         Sec2G.add(btncienkie);
         Sec2G.add(btngrube);
         Sec2G.add(btnrazowe);
@@ -128,6 +145,153 @@ public class Main {
         btnddd.setBounds(225,660,130,30);
         //sec8
         jButton.setBounds(130,720,150,30);
+        JButton test = new JButton("test");
+        test.setBounds(130,750,150,30);
+
+        String[] s1 = new String[1];
+        String[] s2 = new String[1];
+        String[] s3 = new String[1];
+        String[] s4 = new String[1];
+        String[] s5 = new String[1];
+        JPanel jPanel = new JPanel();
+        jPanel.add(btnzoltyser);
+        jPanel.add(btnboczek);
+        jPanel.add(btnszynka);
+        jPanel.add(btnmozzarella);
+        jPanel.add(btnoliwki);
+        jPanel.add(btnpapryka);
+        jPanel.add(btnananas);
+        jPanel.add(btnpieczarki);
+        jPanel.add(btnpomidory);
+        jPanel.add(btnfeta);
+        jPanel.add(btngrillkur);
+        jPanel.add(btnjalapeno);
+        HashSet<String> skladniki = new HashSet<>();
+        String[] s7 = new String[1];
+
+        ActionListener actionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s1.length < 1){
+                    s1[0] = jCheckBox2.getActionCommand();
+                }else if(s1.length >= 1){
+                    s1[0] = jCheckBox2.getActionCommand();
+                }
+                System.out.println(s1[0]);
+            }
+        };
+
+        ActionListener actionListener2 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s2.length < 1){
+                    s2[0] = jCheckBox2.getActionCommand();
+                }else if(s2.length >= 1){
+                    s2[0] = jCheckBox2.getActionCommand();
+                }
+            }
+        };
+
+        ActionListener actionListener3 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s3.length < 1){
+                    s3[0] = jCheckBox2.getActionCommand();
+                }else if(s3.length >= 1){
+                    s3[0] = jCheckBox2.getActionCommand();
+                }
+            }
+        };
+
+        ActionListener actionListener4 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s4.length < 1){
+                    s4[0] = jCheckBox2.getActionCommand();
+                }else if(s4.length >= 1){
+                    s4[0] = jCheckBox2.getActionCommand();
+                }
+            }
+        };
+
+        ActionListener actionListener5 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s5.length < 1){
+                    s5[0] = jCheckBox2.getActionCommand();
+                }else if(s5.length >= 1){
+                    s5[0] = jCheckBox2.getActionCommand();
+                }
+            }
+        };
+
+
+        ActionListener test1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(skladniki);
+            }
+        };
+        ActionListener actionListener6 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JButton jButton2 = (JButton) e.getSource();
+                skladniki.add(jButton2.getActionCommand());
+                System.out.println(jButton2.getActionCommand());
+            }
+        };
+        test.addActionListener(test1);
+
+        ActionListener actionListener7 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBox jCheckBox2 = (JCheckBox) e.getSource();
+                if(s7.length < 1){
+                    s7[0] = jCheckBox2.getActionCommand();
+                }else if(s7.length >= 1){
+                    s7[0] = jCheckBox2.getActionCommand();
+                }
+            }
+        };
+
+        btnsmall.addActionListener(actionListener);
+        btnmedium.addActionListener(actionListener);
+        btnlarge.addActionListener(actionListener);
+        btncienkie.addActionListener(actionListener2);
+        btngrube.addActionListener(actionListener2);
+        btnrazowe.addActionListener(actionListener2);
+        btntradycyjne.addActionListener(actionListener2);
+        btnpomidorowy.addActionListener(actionListener3);
+        btnsweetchilli.addActionListener(actionListener3);
+        btnczosnkowy.addActionListener(actionListener3);
+        btnBBQ.addActionListener(actionListener3);
+        btntymianek.addActionListener(actionListener4);
+        btnoregano.addActionListener(actionListener4);
+        btnbaz.addActionListener(actionListener4);
+        btnzprowan.addActionListener(actionListener4);
+        btnrozmaryn.addActionListener(actionListener5);
+        btnczosnkowao.addActionListener(actionListener5);
+        btnchillio.addActionListener(actionListener5);
+        btnziolowao.addActionListener(actionListener5);
+        btnzoltyser.addActionListener(actionListener6);
+        btnboczek.addActionListener(actionListener6);
+        btnszynka.addActionListener(actionListener6);
+        btnmozzarella.addActionListener(actionListener6);
+        btnoliwki.addActionListener(actionListener6);
+        btnpapryka.addActionListener(actionListener6);
+        btnananas.addActionListener(actionListener6);
+        btnpieczarki.addActionListener(actionListener6);
+        btnpomidory.addActionListener(actionListener6);
+        btnfeta.addActionListener(actionListener6);
+        btngrillkur.addActionListener(actionListener6);
+        btnjalapeno.addActionListener(actionListener6);
+        btnonm.addActionListener(actionListener7);
+        btnddd.addActionListener(actionListener7);
 
         window.add(nameApl);
         window.add(nameSec1);
@@ -178,6 +342,7 @@ public class Main {
         window.add(btnddd);
 
         window.add(jButton);
+        window.add(test);
 
         window.setLayout(null);
         window.setVisible(true);
