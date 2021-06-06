@@ -89,7 +89,7 @@ public class PizzaMaker {
         Sec7G.add(btnonm);
         Sec7G.add(btnddd);
 
-        nameApl.setBounds(160,30,280,30);
+        nameApl.setBounds(135,30,280,30);
         //sec1
         nameSec1.setBounds(30,60,150,40);
         btnsmall.setBounds(50,90,110,30);
@@ -239,22 +239,27 @@ public class PizzaMaker {
         btnsmall.addActionListener(actionListener);
         btnmedium.addActionListener(actionListener);
         btnlarge.addActionListener(actionListener);
+
         btncienkie.addActionListener(actionListener2);
         btngrube.addActionListener(actionListener2);
         btnrazowe.addActionListener(actionListener2);
         btntradycyjne.addActionListener(actionListener2);
+
         btnpomidorowy.addActionListener(actionListener3);
         btnsweetchilli.addActionListener(actionListener3);
         btnczosnkowy.addActionListener(actionListener3);
         btnBBQ.addActionListener(actionListener3);
+
         btntymianek.addActionListener(actionListener4);
         btnoregano.addActionListener(actionListener4);
         btnbaz.addActionListener(actionListener4);
         btnzprowan.addActionListener(actionListener4);
+
         btnrozmaryn.addActionListener(actionListener5);
         btnczosnkowao.addActionListener(actionListener5);
         btnchillio.addActionListener(actionListener5);
         btnziolowao.addActionListener(actionListener5);
+
         btnzoltyser.addActionListener(actionListener6);
         btnboczek.addActionListener(actionListener6);
         btnszynka.addActionListener(actionListener6);
@@ -267,11 +272,14 @@ public class PizzaMaker {
         btnfeta.addActionListener(actionListener6);
         btngrillkur.addActionListener(actionListener6);
         btnjalapeno.addActionListener(actionListener6);
+
         btnonm.addActionListener(actionListener7);
         btnddd.addActionListener(actionListener7);
+
         zamowienieB.addActionListener(moveOrder);
 
         window.add(nameApl);
+
         window.add(nameSec1);
         window.add(btnsmall);
         window.add(btnmedium);
