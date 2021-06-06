@@ -1,63 +1,64 @@
 package pl.edu.pjatk;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        JFrame window = new JFrame("ProjektPOJ - system do zamawiania pizzy");
-        window.setLayout(null);
+    JFrame window = new JFrame("ProjektPOJ - system do zamawiania pizzy");
+    JLabel nameApl = new JLabel("Zamawanie pizzy!");
+    JLabel nameSec1 = new JLabel("Rozmiar");
+    JCheckBox btnsmall = new JCheckBox("mala");
+    JCheckBox btnmedium = new JCheckBox("srednia");
+    JCheckBox btnlarge = new JCheckBox("duza");
+    JLabel nameSec2 = new JLabel("Ciasto");
+    JCheckBox btncienkie = new JCheckBox("cienkie");
+    JCheckBox btngrube = new JCheckBox("grube");
+    JCheckBox btnrazowe = new JCheckBox("razowe");
+    JCheckBox btntradycyjne = new JCheckBox("tradycyjne");
+    JLabel nameSec3 = new JLabel("Dodatkowy sos");
+    JCheckBox btnpomidorowy = new JCheckBox("pomidorowy");
+    JCheckBox btnsweetchilli = new JCheckBox("sweet-chilli");
+    JCheckBox btnczosnkowy = new JCheckBox("czosnkowy");
+    JCheckBox btnBBQ = new JCheckBox("BBQ");
+    JLabel nameSec4 = new JLabel("Dodatkowe przyprawy");
+    JCheckBox btntymianek = new JCheckBox("tymianek");
+    JCheckBox btnoregano = new JCheckBox("oregano");
+    JCheckBox btnbaz = new JCheckBox("bazylia");
+    JCheckBox btnzprowan = new JCheckBox("zioła prowansalskie");
+    JLabel nameSec5 = new JLabel("Oliwa");
+    JCheckBox btnrozmaryn = new JCheckBox("rozmaryn");
+    JCheckBox btnczosnkowao = new JCheckBox("czosnkowa");
+    JCheckBox btnchillio = new JCheckBox("chilli");
+    JCheckBox btnziolowao = new JCheckBox("ziolowa");
+    JLabel nameSec6 = new JLabel("Dodatkowe składniki (MAX 5 skladnikow)");
+    JButton btnzoltyser = new JButton("zolty ser");
+    JButton btnboczek = new JButton("boczek");
+    JButton btnszynka = new JButton("szynka");
+    JButton btnmozzarella = new JButton("mozarella");
+    JButton btnoliwki = new JButton("oliwki");
+    JButton btnpapryka = new JButton("papryka");
+    JButton btnananas = new JButton("ananas");
+    JButton btnpieczarki = new JButton("pieczarki");
+    JButton btnpomidory = new JButton("pomidory");
+    JButton btnfeta = new JButton("feta");
+    JButton btngrillkur = new JButton("kurczak");
+    JButton btnjalapeno = new JButton("jalapeno");
+    JLabel nameSec7 = new JLabel("Sposob dostawy");
+    JCheckBox btnonm = new JCheckBox("odbior na miejscu");
+    JCheckBox btnddd = new JCheckBox("dostawa do domu");
+    JButton jButton = new JButton("Zloz zamowienie");
 
-        JLabel nameApl = new JLabel("Zamawanie pizzy!");
-        JLabel nameSec1 = new JLabel("Rozmiar");
-        JCheckBox btnsmall = new JCheckBox("mala");
-        JCheckBox btnmedium = new JCheckBox("srednia");
-        JCheckBox btnlarge = new JCheckBox("duza");
-        JLabel nameSec2 = new JLabel("Ciasto");
-        JCheckBox btncienkie = new JCheckBox("cienkie");
-        JCheckBox btngrube = new JCheckBox("grube");
-        JCheckBox btnrazowe = new JCheckBox("razowe");
-        JCheckBox btntradycyjne = new JCheckBox("tradycyjne");
-        JLabel nameSec3 = new JLabel("Dodatkowy sos");
-        JCheckBox btnpomidorowy = new JCheckBox("pomidorowy");
-        JCheckBox btnsweetchilli = new JCheckBox("sweet-chilli");
-        JCheckBox btnczosnkowy = new JCheckBox("czosnkowy");
-        JCheckBox btnBBQ = new JCheckBox("BBQ");
-        JLabel nameSec4 = new JLabel("Dodatkowe przyprawy");
-        JCheckBox btntymianek = new JCheckBox("tymianek");
-        JCheckBox btnoregano = new JCheckBox("oregano");
-        JCheckBox btnbaz = new JCheckBox("bazylia");
-        JCheckBox btnzprowan = new JCheckBox("zioła prowansalskie");
-        JLabel nameSec5 = new JLabel("Oliwa");
-        JCheckBox btnrozmaryn = new JCheckBox("rozmaryn");
-        JCheckBox btnczosnkowao = new JCheckBox("czosnkowa");
-        JCheckBox btnchillio = new JCheckBox("chilli");
-        JCheckBox btnziolowao = new JCheckBox("ziolowa");
-        JLabel nameSec6 = new JLabel("Dodatkowe składniki (MAX 5 skladnikow)");
-        JButton btnzoltyser = new JButton("zolty ser");
-        JButton btnboczek = new JButton("boczek");
-        JButton btnszynka = new JButton("szynka");
-        JButton btnmozzarella = new JButton("mozarella");
-        JButton btnoliwki = new JButton("oliwki");
-        JButton btnpapryka = new JButton("papryka");
-        JButton btnananas = new JButton("ananas");
-        JButton btnpieczarki = new JButton("pieczarki");
-        JButton btnpomidory = new JButton("pomidory");
-        JButton btnfeta = new JButton("feta");
-        JButton btngrillkur = new JButton("kurczak");
-        JButton btnjalapeno = new JButton("jalapeno");
-        JLabel nameSec7 = new JLabel("Sposob dostawy");
-        JCheckBox btnonm = new JCheckBox("odbior na miejscu");
-        JCheckBox btnddd = new JCheckBox("dostawa do domu");
-        JButton jButton = new JButton("Zloz zamowienie");
+    String imie,nazwisko,nr_telefonu,adres;
+
+    public Main(String imie,String nazwisko,String nr_telefonu,String adres){
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.nr_telefonu = nr_telefonu;
+        this.adres = adres;
+
+        window.setLayout(null);
 
         ButtonGroup Sec1G = new ButtonGroup();
         ButtonGroup Sec2G = new ButtonGroup ();
@@ -176,7 +177,6 @@ public class Main {
                 }else if(s1.length >= 1){
                     s1[0] = jCheckBox2.getActionCommand();
                 }
-                System.out.println(s1[0]);
             }
         };
 
@@ -232,7 +232,7 @@ public class Main {
         ActionListener test1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output output = new Output(s1,s2,s3,s4,s5,skladniki,s7);
+                Output output = new Output(s1,s2,s3,s4,s5,skladniki,s7,imie,nazwisko,adres,nr_telefonu);
                 window.dispose();
             }
         };
@@ -241,7 +241,6 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 JButton jButton2 = (JButton) e.getSource();
                 skladniki.add(jButton2.getActionCommand());
-                System.out.println(jButton2.getActionCommand());
             }
         };
         test.addActionListener(test1);
