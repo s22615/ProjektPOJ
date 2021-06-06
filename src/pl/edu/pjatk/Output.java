@@ -5,9 +5,9 @@ import javax.swing.*;
 import java.util.HashSet;
 
 public class Output {
-    JFrame jFrame = new JFrame();
+    JFrame jFrame = new JFrame("ProjektPOJ - system do zamawiania pizzy");
     JLabel jLabel = new JLabel();
-    JLabel przywitanie = new JLabel();
+    JLabel podziekowanie = new JLabel();
     JLabel jLabel2 = new JLabel();
     JLabel jLabel3 = new JLabel();
     JButton jButton = new JButton();
@@ -42,23 +42,23 @@ public class Output {
         String rozmiar5 = s5[0];
         String rozmiar6 = "";
         for (String s : skladniki) {
-            rozmiar6 = rozmiar6 + ", " + s;
+            rozmiar6 = rozmiar6 + s + ", ";
         }
         System.out.println(rozmiar6);
         String rozmiar7 = s7[0];
 
-        przywitanie.setText(String.format("Witaj: %s",imie));
+        podziekowanie.setText(String.format("Witaj: %s",imie));
         jLabel.setText(String.format("rozmiar: %s \n, ciasto: %s \n,dodatkowy sos: %s \n",rozmiar,rozmiar2,rozmiar3));
         jLabel2.setText(String.format("Dodatkowe przyprawy: %s \n, oliwa: %s \n, dostawa: %s \n",rozmiar4,rozmiar5,rozmiar7));
         jLabel3.setText(String.format("Skladniki: %s", rozmiar6));
 
         jFrame.add(jLabel);
-        jFrame.add(przywitanie);
+        jFrame.add(podziekowanie);
         jFrame.add(jLabel2);
         jFrame.add(jLabel3);
         jFrame.add(jButton);
 
-        przywitanie.setBounds(10,20,600,20);
+        podziekowanie.setBounds(10,20,600,20);
         jLabel.setBounds(30,50, 600, 50);
         jLabel2.setBounds(30,150, 600, 50);
         jLabel3.setBounds(30,250, 600, 50);
