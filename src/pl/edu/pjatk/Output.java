@@ -2,6 +2,7 @@ package pl.edu.pjatk;
 
 import javax.swing.*;
 import java.util.HashSet;
+import java.util.Random;
 
 public class Output {
     private JFrame jFrame = new JFrame("ProjektPOJ - system do zamawiania pizzy");
@@ -32,7 +33,8 @@ public class Output {
     private JLabel dostawaH = new JLabel();
     private JLabel skladnikiL = new JLabel();
     private JLabel skladnikiH = new JLabel();
-
+    private JLabel czasdostawyL = new JLabel();
+    private JLabel czasdostawyH = new JLabel();
 
     String[] s1 = new String[1];
     String[] s2 = new String[1];
@@ -100,6 +102,15 @@ public class Output {
         dostawaL.setText(String.format("Dostawa: "));
         dostawaH.setText(String.format(dostawa));
 
+        czasdostawyL.setText(String.format("Przewidywany czas dostawy"));
+        if(dostawa == "dostawa do domu"){
+            int random = (int) (Math.random()*120 + 45);
+
+            czasdostawyH.setText(String.format("%d minut",random));
+        }else{
+            czasdostawyH.setText(String.format("BRAK"));
+        }
+
         jFrame.add(jLabel);
         jFrame.add(podziekowanie);
         jFrame.add(podsumowanie);
@@ -123,10 +134,12 @@ public class Output {
         jFrame.add(przyprawyH);
         jFrame.add(oliwaL);
         jFrame.add(oliwaH);
-        jFrame.add(skladnikiL);
-        jFrame.add(skladnikiH);
         jFrame.add(dostawaL);
         jFrame.add(dostawaH);
+        jFrame.add(skladnikiL);
+        jFrame.add(skladnikiH);
+        jFrame.add(czasdostawyL);
+        jFrame.add(czasdostawyH);
 
         podziekowanie.setBounds(70,20,600,20);
         podsumowanie.setBounds(80,60,600,20);
@@ -155,7 +168,10 @@ public class Output {
         dostawaL.setBounds(110,360,80,30);
         dostawaH.setBounds(200,360,110,30);
         skladnikiL.setBounds(170,380,80,30);
-        skladnikiH.setBounds(30,400,350,30);
+        skladnikiH.setBounds(80,400,350,30);
+
+        czasdostawyL.setBounds(115,440,200,30);
+        czasdostawyH.setBounds(170,460,350,30);
 
         jFrame.setSize(425,600);
         jFrame.setVisible(true);

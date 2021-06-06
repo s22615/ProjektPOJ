@@ -211,8 +211,12 @@ public class PizzaMaker {
         ActionListener moveOrder = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(s1[0] == null || s2[0] == null || s3[0] == null || s4[0] == null || s5[0] == null || s7[0] == null ){
+                    JOptionPane.showMessageDialog(null, "W kazdej sekcji (procz skladnikow) nalezy wybrac przynajmniej jeden element", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }else{
                 Output output = new Output(s1,s2,s3,s4,s5,skladniki,s7,imie,nazwisko,adres,nr_telefonu);
                 window.dispose();
+                }
             }
         };
         ActionListener actionListener6 = new ActionListener() {

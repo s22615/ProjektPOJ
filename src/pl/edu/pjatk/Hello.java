@@ -3,6 +3,8 @@ package pl.edu.pjatk;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Hello {
     private JFrame windowHello = new JFrame("ProjektPOJ - system do zamawiania pizzy");
@@ -51,8 +53,17 @@ public class Hello {
                 if(imie.getText().isEmpty() || nazwisko.getText().isEmpty()  || adres.getText().isEmpty()  || nr_telefonu.getText().isEmpty() ){
                     JOptionPane.showMessageDialog(null, "Prosze uzupelnic kazde pole swoimi danymi!", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }else{
-                PizzaMaker pizzaMaker = new PizzaMaker(imie.getText(),nazwisko.getText(),adres.getText(),nr_telefonu.getText());
-                windowHello.dispose();
+                    Pattern patterntel = Pattern.compile("\\d{3}[ -]?\\d{3}[ -]?\\d{3}(?!\\w)");
+                    Pattern patternname = Pattern.compile("^[a-zA-Z]+");
+                    Matcher matcher = patterntel.matcher(nr_telefonu.getText());
+                    Matcher matchername = patternname.matcher(imie.getText());
+                    Matcher matchername2 = patternname.matcher(imie.getText());
+                    if(matcher.matches() && matchername.matches() && matchername2.matches()){
+                        PizzaMaker pizzaMaker = new PizzaMaker(imie.getText(),nazwisko.getText(),adres.getText(),nr_telefonu.getText());
+                        windowHello.dispose();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Blednie wprowadzone dane! Sprobuj jeszcze raz!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
             }}
         });
 
