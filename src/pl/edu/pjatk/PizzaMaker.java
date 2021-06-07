@@ -8,31 +8,31 @@ import java.util.HashSet;
 public class PizzaMaker {
     private JFrame window = new JFrame("ProjektPOJ - system do zamawiania pizzy");
     private JLabel nameApl = new JLabel("Skomponuj swoja pizze!");
-    private JLabel nameSec1 = new JLabel("Rozmiar");
+    private JLabel nameSec1 = new JLabel("Rozmiar (6 zł)");
     private JCheckBox btnsmall = new JCheckBox("mala");
     private JCheckBox btnmedium = new JCheckBox("srednia");
     private JCheckBox btnlarge = new JCheckBox("duza");
-    private JLabel nameSec2 = new JLabel("Ciasto");
+    private JLabel nameSec2 = new JLabel("Ciasto (6 zł)");
     private JCheckBox btncienkie = new JCheckBox("cienkie");
     private JCheckBox btngrube = new JCheckBox("grube");
     private JCheckBox btnrazowe = new JCheckBox("razowe");
     private JCheckBox btntradycyjne = new JCheckBox("tradycyjne");
-    private JLabel nameSec3 = new JLabel("Dodatkowy sos");
+    private JLabel nameSec3 = new JLabel("Dodatkowy sos (4 zł)");
     private JCheckBox btnpomidorowy = new JCheckBox("pomidorowy");
     private JCheckBox btnsweetchilli = new JCheckBox("sweet-chilli");
     private JCheckBox btnczosnkowy = new JCheckBox("czosnkowy");
     private JCheckBox btnBBQ = new JCheckBox("BBQ");
-    private JLabel nameSec4 = new JLabel("Dodatkowe przyprawy");
+    private JLabel nameSec4 = new JLabel("Dodatkowe przyprawy (3 zł)");
     private JCheckBox btntymianek = new JCheckBox("tymianek");
     private JCheckBox btnoregano = new JCheckBox("oregano");
     private JCheckBox btnbaz = new JCheckBox("bazylia");
     private JCheckBox btnzprowan = new JCheckBox("zioła prowansalskie");
-    private JLabel nameSec5 = new JLabel("Oliwa");
+    private JLabel nameSec5 = new JLabel("Oliwa (3 zł)");
     private JCheckBox btnrozmaryn = new JCheckBox("rozmaryn");
     private JCheckBox btnczosnkowao = new JCheckBox("czosnkowa");
     private JCheckBox btnchillio = new JCheckBox("chilli");
     private JCheckBox btnziolowao = new JCheckBox("ziolowa");
-    private JLabel nameSec6 = new JLabel("Dodatkowe składniki");
+    private JLabel nameSec6 = new JLabel("Dodatkowe składniki (5zł za skladnik)");
     private JButton btnzoltyser = new JButton("zolty ser");
     private JButton btnboczek = new JButton("boczek");
     private JButton btnszynka = new JButton("szynka");
@@ -45,7 +45,7 @@ public class PizzaMaker {
     private JButton btnfeta = new JButton("feta");
     private JButton btngrillkur = new JButton("kurczak");
     private JButton btnjalapeno = new JButton("jalapeno");
-    private JLabel nameSec7 = new JLabel("Sposob dostawy");
+    private JLabel nameSec7 = new JLabel("Sposob dostawy (do domu: +(8.5zł))");
     private JCheckBox btnonm = new JCheckBox("odbior na miejscu");
     private JCheckBox btnddd = new JCheckBox("dostawa do domu");
     private JButton zamowienieB = new JButton("Zloz zamowienie");
@@ -108,7 +108,7 @@ public class PizzaMaker {
         btnczosnkowy.setBounds(300,240,110,30);
         btnBBQ.setBounds(50,270,110,30);
         //sec4
-        nameSec4.setBounds(30,300,150,40);
+        nameSec4.setBounds(30,300,200,40);
         btntymianek.setBounds(50,330,110,30);
         btnoregano.setBounds(175,330,110,30);
         btnbaz.setBounds(300,330,110,30);
@@ -120,7 +120,7 @@ public class PizzaMaker {
         btnchillio.setBounds(300,420,110,30);
         btnziolowao.setBounds(50,450,110,30);
         //sec6
-        nameSec6.setBounds(30,480,150,40);
+        nameSec6.setBounds(30,480,250,40);
         btnzoltyser.setBounds(30,520,110,30);
         btnboczek.setBounds(155,520,110,30);
         btnszynka.setBounds(280,520,110,30);
@@ -134,9 +134,9 @@ public class PizzaMaker {
         btngrillkur.setBounds(155,610,110,30);
         btnjalapeno.setBounds(280,610,110,30);
         //sec7
-        nameSec7.setBounds(30,640,150,40);
+        nameSec7.setBounds(30,640,300,40);
         btnonm.setBounds(50,670,130,30);
-        btnddd.setBounds(225,670,130,30);
+        btnddd.setBounds(250,670,180,30);
         //sec8
         zamowienieB.setBounds(130,730,150,30);
 

@@ -55,10 +55,12 @@ public class Hello {
                 }else{
                     Pattern patterntel = Pattern.compile("\\d{3}[ -]?\\d{3}[ -]?\\d{3}(?!\\w)");
                     Pattern patternname = Pattern.compile("^[a-zA-Z]+");
+                    Pattern patternadress = Pattern.compile("(?<s>^[\\D]+[ ])(?<h>[\\d]+)(?<e>.*?$)|");
                     Matcher matcher = patterntel.matcher(nr_telefonu.getText());
                     Matcher matchername = patternname.matcher(imie.getText());
-                    Matcher matchername2 = patternname.matcher(imie.getText());
-                    if(matcher.matches() && matchername.matches() && matchername2.matches()){
+                    Matcher matchername2 = patternname.matcher(nazwisko.getText());
+                    Matcher matcheradress = patternadress.matcher(adres.getText());
+                    if(matcher.matches() && matchername.matches() && matchername2.matches() && matcheradress.matches()){
                         PizzaMaker pizzaMaker = new PizzaMaker(imie.getText(),nazwisko.getText(),adres.getText(),nr_telefonu.getText());
                         windowHello.dispose();
                     }else{

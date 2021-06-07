@@ -35,6 +35,8 @@ public class Output {
     private JLabel skladnikiH = new JLabel();
     private JLabel czasdostawyL = new JLabel();
     private JLabel czasdostawyH = new JLabel();
+    private JLabel dozaplatyL = new JLabel();
+    private JLabel dozaplatyH = new JLabel();
 
     String[] s1 = new String[1];
     String[] s2 = new String[1];
@@ -45,6 +47,7 @@ public class Output {
     String[] s7 = new String[1];
 
     private String imie,nazwisko,nr_telefonu,adres;
+    private double koszt = 22;
 
     public Output(String[] s1, String[] s2, String[] s3, String[] s4, String[] s5, HashSet<String> skladniki, String[] s7,String imie,String nazwisko,String nr_telefonu,String adres) {
         this.s1 = s1;
@@ -70,6 +73,7 @@ public class Output {
 
         for (String s : skladniki) {
             skladnikiS = skladnikiS + s + ", ";
+            koszt += 5;
         }
 
         String dostawa = s7[0];
@@ -105,11 +109,14 @@ public class Output {
         czasdostawyL.setText(String.format("Przewidywany czas dostawy"));
         if(dostawa == "dostawa do domu"){
             int random = (int) (Math.random()*120 + 45);
-
             czasdostawyH.setText(String.format("%d minut",random));
+            koszt += 8.5;
         }else{
             czasdostawyH.setText(String.format("BRAK"));
         }
+        String kosztS = Double.toString(koszt);
+        dozaplatyL.setText(String.format("Do zaplaty: "));
+        dozaplatyH.setText(kosztS + " zł");
 
         jFrame.add(jLabel);
         jFrame.add(podziekowanie);
@@ -140,6 +147,8 @@ public class Output {
         jFrame.add(skladnikiH);
         jFrame.add(czasdostawyL);
         jFrame.add(czasdostawyH);
+        jFrame.add(dozaplatyL);
+        jFrame.add(dozaplatyH);
 
         podziekowanie.setBounds(70,20,600,20);
         podsumowanie.setBounds(80,60,600,20);
@@ -172,6 +181,9 @@ public class Output {
 
         czasdostawyL.setBounds(115,440,200,30);
         czasdostawyH.setBounds(170,460,350,30);
+
+        dozaplatyL.setBounds(110,500,80,30);
+        dozaplatyH.setBounds(200,500,110,30);
 
         jFrame.setSize(425,600);
         jFrame.setVisible(true);
