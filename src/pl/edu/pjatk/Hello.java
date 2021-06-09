@@ -1,8 +1,12 @@
 package pl.edu.pjatk;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +23,12 @@ public class Hello {
     private JTextField nr_telefonu = new JTextField();
     private JButton dalej = new JButton("Dalej");
     public Hello() {
+        try{
+            AudioInputStream muzyczka2 = AudioSystem.getAudioInputStream(new File("C:\\Users\\Sebastian\\IdeaProjects\\ProjektPOJ\\assets\\mmia.wav").getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(muzyczka2);
+
+        windowHello.getContentPane().setBackground(Color.lightGray);
         przywitanie.setBounds(50,10,350,30);
         imieL.setBounds(100,60,80,30);
         imie.setBounds(180,60,110,30);
@@ -61,6 +71,8 @@ public class Hello {
                     Matcher matchername2 = patternname.matcher(nazwisko.getText());
                     Matcher matcheradress = patternadress.matcher(adres.getText());
                     if(matcher.matches() && matchername.matches() && matchername2.matches() && matcheradress.matches()){
+                        clip.start();
+
                         PizzaMaker pizzaMaker = new PizzaMaker(imie.getText(),nazwisko.getText(),adres.getText(),nr_telefonu.getText());
                         windowHello.dispose();
                     }else{
@@ -73,5 +85,12 @@ public class Hello {
         windowHello.setSize(420,320);
         windowHello.setLayout(null);
         windowHello.setVisible(true);
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
     }
 }

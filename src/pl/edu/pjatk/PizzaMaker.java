@@ -1,8 +1,12 @@
 package pl.edu.pjatk;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 
 public class PizzaMaker {
@@ -58,14 +62,43 @@ public class PizzaMaker {
         this.nr_telefonu = nr_telefonu;
         this.adres = adres;
 
+        try{
+            AudioInputStream muzyczka2 = AudioSystem.getAudioInputStream(new File("C:\\Users\\Sebastian\\IdeaProjects\\ProjektPOJ\\assets\\mmia.wav").getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(muzyczka2);
+
+
+        window.getContentPane().setBackground(Color.lightGray);
+        btnsmall.setBackground(Color.lightGray);
+        btnmedium.setBackground(Color.lightGray);
+        btnlarge.setBackground(Color.lightGray);
+        btncienkie.setBackground(Color.lightGray);
+        btngrube.setBackground(Color.lightGray);
+        btnrazowe.setBackground(Color.lightGray);
+        btntradycyjne.setBackground(Color.lightGray);
+        btnpomidorowy.setBackground(Color.lightGray);
+        btnsweetchilli.setBackground(Color.lightGray);
+        btnczosnkowy.setBackground(Color.lightGray);
+        btnBBQ.setBackground(Color.lightGray);
+        btntymianek.setBackground(Color.lightGray);
+        btnoregano.setBackground(Color.lightGray);
+        btnbaz.setBackground(Color.lightGray);
+        btnzprowan.setBackground(Color.lightGray);
+        btnrozmaryn.setBackground(Color.lightGray);
+        btnczosnkowao.setBackground(Color.lightGray);
+        btnchillio.setBackground(Color.lightGray);
+        btnziolowao.setBackground(Color.lightGray);
+        btnonm.setBackground(Color.lightGray);
+        btnddd.setBackground(Color.lightGray);
+
         window.setLayout(null);
 
         ButtonGroup Sec1G = new ButtonGroup();
-        ButtonGroup Sec2G = new ButtonGroup ();
-        ButtonGroup Sec3G = new ButtonGroup ();
-        ButtonGroup Sec4G = new ButtonGroup ();
-        ButtonGroup Sec5G = new ButtonGroup ();
-        ButtonGroup Sec7G = new ButtonGroup ();
+        ButtonGroup Sec2G = new ButtonGroup();
+        ButtonGroup Sec3G = new ButtonGroup();
+        ButtonGroup Sec4G = new ButtonGroup();
+        ButtonGroup Sec5G = new ButtonGroup();
+        ButtonGroup Sec7G = new ButtonGroup();
 
         Sec1G.add(btnsmall);
         Sec1G.add(btnmedium);
@@ -214,6 +247,7 @@ public class PizzaMaker {
                 if(s1[0] == null || s2[0] == null || s3[0] == null || s4[0] == null || s5[0] == null || s7[0] == null ){
                     JOptionPane.showMessageDialog(null, "W kazdej sekcji (procz skladnikow) nalezy wybrac przynajmniej jeden element", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }else{
+                clip.start();
                 Output output = new Output(s1,s2,s3,s4,s5,skladniki,s7,imie,nazwisko,adres,nr_telefonu);
                 window.dispose();
                 }
@@ -338,5 +372,13 @@ public class PizzaMaker {
         window.setSize(425,850);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
+
+    } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

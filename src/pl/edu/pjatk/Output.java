@@ -1,6 +1,7 @@
 package pl.edu.pjatk;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -77,6 +78,8 @@ public class Output {
         }
 
         String dostawa = s7[0];
+
+        jFrame.getContentPane().setBackground(Color.lightGray);
 
         podziekowanie.setText(String.format("Dziekujemy za skorzystanie z naszych uslug!"));
         podsumowanie.setText(String.format("Oto podsumowanie twojego zamowienia"));
@@ -188,6 +191,7 @@ public class Output {
         jFrame.setSize(425,600);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
     }
 
