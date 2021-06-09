@@ -2,6 +2,10 @@ package pl.edu.pjatk;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -121,6 +125,20 @@ public class Output {
         dozaplatyL.setText(String.format("Do zaplaty: "));
         dozaplatyH.setText(kosztS + " zł");
 
+        ArrayList<String> lista = new ArrayList<>();
+        lista.add(imie);
+        lista.add(nazwisko);
+        lista.add(adres);
+        lista.add(nr_telefonu);
+        lista.add(s1[0]);
+        lista.add(s2[0]);
+        lista.add(s3[0]);
+        lista.add(s4[0]);
+        lista.add(s5[0]);
+        lista.addAll(skladniki);
+        lista.add(s7[0]);
+
+
         jFrame.add(jLabel);
         jFrame.add(podziekowanie);
         jFrame.add(podsumowanie);
@@ -187,6 +205,17 @@ public class Output {
 
         dozaplatyL.setBounds(110,500,80,30);
         dozaplatyH.setBounds(200,500,110,30);
+
+        try {
+            FileWriter fileWriter = new FileWriter("C:\\Users\\Sebastian\\IdeaProjects\\ProjektPOJ\\assets\\zamowienie.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (String s : lista) {
+                bufferedWriter.write(s+'\n');
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         jFrame.setSize(425,600);
         jFrame.setVisible(true);

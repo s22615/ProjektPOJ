@@ -24,10 +24,13 @@ public class Hello {
     private JButton dalej = new JButton("Dalej");
     public Hello() {
         try{
+            AudioInputStream muzyczka1 = AudioSystem.getAudioInputStream(new File("C:\\Users\\Sebastian\\IdeaProjects\\ProjektPOJ\\assets\\fenincula.wav").getAbsoluteFile());
             AudioInputStream muzyczka2 = AudioSystem.getAudioInputStream(new File("C:\\Users\\Sebastian\\IdeaProjects\\ProjektPOJ\\assets\\mmia.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
-            clip.open(muzyczka2);
-
+            Clip clip2 = AudioSystem.getClip();
+            clip.open(muzyczka1);
+            clip2.open(muzyczka2);
+            clip.start();
         windowHello.getContentPane().setBackground(Color.lightGray);
         przywitanie.setBounds(50,10,350,30);
         imieL.setBounds(100,60,80,30);
@@ -71,8 +74,7 @@ public class Hello {
                     Matcher matchername2 = patternname.matcher(nazwisko.getText());
                     Matcher matcheradress = patternadress.matcher(adres.getText());
                     if(matcher.matches() && matchername.matches() && matchername2.matches() && matcheradress.matches()){
-                        clip.start();
-
+                        clip2.start();
                         PizzaMaker pizzaMaker = new PizzaMaker(imie.getText(),nazwisko.getText(),adres.getText(),nr_telefonu.getText());
                         windowHello.dispose();
                     }else{
