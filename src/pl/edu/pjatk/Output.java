@@ -190,10 +190,7 @@ public class Output {
 
         jFrame.setSize(425,600);
         jFrame.setVisible(true);
+        jFrame.setResizable(false);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-
     }
-
-
 }

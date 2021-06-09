@@ -85,6 +85,7 @@ public class Hello {
         windowHello.setSize(420,320);
         windowHello.setLayout(null);
         windowHello.setVisible(true);
+        windowHello.setResizable(false);
         } catch (LineUnavailableException e) {
             e.printStackTrace();
         } catch (IOException e) {
